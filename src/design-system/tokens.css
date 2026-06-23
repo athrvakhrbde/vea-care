@@ -1,0 +1,141 @@
+/* VEA — unified tokens (contrast-first) */
+
+:root {
+  --vea-ink: #071008;
+  --vea-paper: #f4f6f5;
+  --vea-paper-muted: #e8ecea;
+  --vea-paper-deep: #d8dedb;
+
+  --vea-brand: #145c40;
+  --vea-brand-light: #1a734f;
+  --vea-brand-hover: #0e4a32;
+  --vea-brand-muted: rgba(20, 92, 64, 0.14);
+  --vea-brand-ink: #ffffff;
+  --vea-brand-glow: rgba(20, 92, 64, 0.22);
+
+  --vea-accent: #145c40;
+  --vea-accent-hover: #0e4a32;
+  --vea-accent-muted: var(--vea-brand-muted);
+  --vea-accent-ink: #ffffff;
+
+  --vea-bg: var(--vea-paper);
+  --vea-bg-subtle: var(--vea-paper-muted);
+  --vea-bg-muted: var(--vea-paper-muted);
+  --vea-bg-elevated: #ffffff;
+  --vea-bg-dark: #071008;
+  --vea-stone: var(--vea-paper-muted);
+  --vea-stone-deep: var(--vea-paper-deep);
+  --vea-sand: var(--vea-paper-deep);
+
+  /* Contrast-safe text (≥4.5:1 on paper / white) */
+  --vea-text-primary: var(--vea-ink);
+  --vea-text-secondary: #2a332f;
+  --vea-text-muted: #454e4a;
+  --vea-text-subtle: #5c6561;
+  --vea-text-inverse: #f4f6f5;
+  --vea-text-inverse-secondary: rgba(244, 246, 245, 0.88);
+  --vea-text-inverse-muted: rgba(244, 246, 245, 0.68);
+
+  --vea-border: rgba(7, 16, 8, 0.12);
+  --vea-border-strong: rgba(7, 16, 8, 0.22);
+  --vea-border-w: 1px;
+
+  --vea-sage: var(--vea-brand);
+  --vea-sage-light: var(--vea-brand-light);
+  --vea-sage-muted: var(--vea-brand-muted);
+  --vea-gold: #8a6d1f;
+  --vea-coral: var(--vea-brand);
+
+  /* Glass — opaque enough for contrast */
+  --vea-glass-bg: rgba(255, 255, 255, 0.88);
+  --vea-glass-bg-muted: rgba(255, 255, 255, 0.72);
+  --vea-glass-border: rgba(7, 16, 8, 0.1);
+  --vea-glass-border-strong: rgba(7, 16, 8, 0.18);
+  --vea-glass-blur: 16px;
+  --vea-glass-shadow: 0 4px 24px rgba(7, 16, 8, 0.07);
+  --vea-glass-shadow-hover: 0 8px 32px rgba(7, 16, 8, 0.11);
+
+  --vea-glass-dark-bg: rgba(7, 16, 8, 0.82);
+  --vea-glass-dark-border: rgba(255, 255, 255, 0.14);
+
+  /* Subtle mesh — does not compete with content */
+  --vea-mesh-a: #e0ebe6;
+  --vea-mesh-b: #ecf1ee;
+  --vea-mesh-c: #eae8e4;
+
+  /* Typography */
+  --vea-text-xs: 0.75rem;
+  --vea-text-sm: 0.875rem;
+  --vea-text-base: 1rem;
+  --vea-text-lg: 1.125rem;
+  --vea-text-xl: 1.25rem;
+  --vea-text-2xl: 1.5rem;
+  --vea-text-3xl: clamp(1.625rem, 4vw, 2rem);
+  --vea-text-4xl: clamp(2rem, 5vw, 2.5rem);
+  --vea-text-5xl: clamp(2.25rem, 6vw, 3.25rem);
+  --vea-text-6xl: clamp(2.5rem, 7vw, 4rem);
+  --vea-text-7xl: clamp(2.75rem, 8vw, 4.75rem);
+
+  --vea-leading-tight: 1.08;
+  --vea-leading-snug: 1.25;
+  --vea-leading-normal: 1.6;
+  --vea-leading-relaxed: 1.65;
+
+  --vea-tracking-tight: -0.03em;
+  --vea-tracking-normal: -0.01em;
+  --vea-tracking-wide: 0.04em;
+  --vea-tracking-wider: 0.08em;
+
+  /* Layout — one rhythm everywhere */
+  --vea-gutter: clamp(1rem, 4vw, 1.75rem);
+  --vea-container: min(1120px, 100% - 2 * var(--vea-gutter));
+  --vea-container-xl: var(--vea-container);
+  --vea-container-2xl: var(--vea-container);
+  --vea-measure: 34rem;
+  --vea-measure-wide: 40rem;
+  --vea-header-h: 3.75rem;
+
+  --vea-section-y: clamp(3.5rem, 7vw, 5.5rem);
+  --vea-section-header-gap: 2rem;
+  --vea-grid-gap: 1.25rem;
+  --vea-card-padding: 1.25rem;
+
+  /* One radius family */
+  --vea-radius-sm: 8px;
+  --vea-radius-md: 12px;
+  --vea-radius-lg: 12px;
+  --vea-radius-xl: 12px;
+  --vea-radius-full: 9999px;
+
+  --vea-shadow-sm: var(--vea-glass-shadow);
+  --vea-shadow-md: var(--vea-glass-shadow-hover);
+  --vea-shadow-lg: 0 12px 40px rgba(7, 16, 8, 0.12);
+
+  --vea-rule-thin: 1px;
+
+  --vea-space-12: 3rem;
+  --vea-space-16: 4rem;
+  --vea-space-20: 5rem;
+  --vea-space-24: 6rem;
+  --vea-space-32: 8rem;
+
+  --vea-duration-base: 180ms;
+  --vea-duration-slow: 320ms;
+  --vea-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --vea-header-h: 4rem;
+    --vea-grid-gap: 1.5rem;
+    --vea-card-padding: 1.5rem;
+    --vea-section-header-gap: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --vea-gutter: 2rem;
+    --vea-grid-gap: 1.75rem;
+  }
+}
