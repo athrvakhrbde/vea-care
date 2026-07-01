@@ -1,30 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Container, Input, Section, SectionHeader } from "@/design-system";
+import { Button, Container, Input, Section, SectionHeader, Text } from "@/design-system";
 
 export function Newsletter() {
   const [done, setDone] = useState(false);
 
   return (
-    <Section variant="dark">
+    <Section padding="lg">
       <Container size="narrow">
-        <div className="panel-dark panel-padding panel-padding-lg">
+        <div className="panel panel-padding-lg text-center">
           <SectionHeader
             eyebrow="Newsletter"
             title="Stay in the loop"
-            description="New products and offers. No spam — just useful updates on lower-limb care."
-            align="center"
-            tone="dark"
+            description="New products and offers. No spam, just useful updates on lower-limb care."
             spacing="none"
           />
           {done ? (
-            <p className="mt-8 text-center text-[var(--vea-text-sm)] text-[var(--vea-text-inverse-secondary)]">
+            <Text tone="secondary" className="mt-[var(--stack-lg)]">
               You&apos;re subscribed. Thank you.
-            </p>
+            </Text>
           ) : (
             <form
-              className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+              className="mx-auto mt-[var(--stack-lg)] flex max-w-lg flex-col gap-3 sm:flex-row sm:items-end"
               onSubmit={(e) => {
                 e.preventDefault();
                 setDone(true);
@@ -36,9 +34,9 @@ export function Newsletter() {
                 required
                 placeholder="your@email.com"
                 aria-label="Email"
-                className="flex-1 border-[var(--vea-glass-dark-border)] bg-white/10 text-white placeholder:text-white/50"
+                wrapperClassName="flex-1"
               />
-              <Button type="submit" className="w-full sm:w-auto">
+              <Button type="submit" className="w-full shrink-0 sm:w-auto">
                 Subscribe
               </Button>
             </form>

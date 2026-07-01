@@ -17,7 +17,7 @@ export const blogPosts: BlogPost[] = [
     slug: "poor-movement-killing-performance",
     title: "You're Training Wrong: How Poor Movement Is Killing Your Performance",
     excerpt:
-      "You show up. You train hard. And yet, your performance plateaus. The problem might not be effort — it's how you move.",
+      "You show up. You train hard. And yet, your performance plateaus. The problem might not be effort, it's how you move.",
     date: "2026-03-31",
     author: "Wellchi Biotech",
     category: "Performance",

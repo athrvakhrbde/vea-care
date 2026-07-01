@@ -1,141 +1,149 @@
-/* VEA — unified tokens (contrast-first) */
+/* Nue Health–inspired design tokens */
 
 :root {
-  --vea-ink: #071008;
-  --vea-paper: #f4f6f5;
-  --vea-paper-muted: #e8ecea;
-  --vea-paper-deep: #d8dedb;
+  color-scheme: light;
 
-  --vea-brand: #145c40;
-  --vea-brand-light: #1a734f;
-  --vea-brand-hover: #0e4a32;
-  --vea-brand-muted: rgba(20, 92, 64, 0.14);
-  --vea-brand-ink: #ffffff;
-  --vea-brand-glow: rgba(20, 92, 64, 0.22);
+  --nue-bg: #f7f7f7;
+  --nue-bg-cream: #fdf9f6;
+  --nue-surface: #ffffff;
+  --nue-surface-muted: #ececec;
+  --nue-text: #0a0a0a;
+  --nue-text-body: #171717;
+  --nue-text-secondary: #404040;
+  --nue-text-muted: #525252;
+  --nue-border: #d4d4d4;
+  --nue-border-strong: #a3a3a3;
+  --nue-button: #0a0a0a;
+  --nue-button-hover: #eae5df;
+  --nue-button-text: #ffffff;
+  --nue-button-text-hover: #0a0a0a;
 
-  --vea-accent: #145c40;
-  --vea-accent-hover: #0e4a32;
-  --vea-accent-muted: var(--vea-brand-muted);
-  --vea-accent-ink: #ffffff;
+  --neutral-primary-soft: var(--nue-surface);
+  --neutral-primary: var(--nue-bg);
+  --neutral-primary-medium: var(--nue-surface);
+  --neutral-primary-strong: var(--nue-surface);
+  --neutral-secondary-soft: var(--nue-bg-cream);
+  --neutral-secondary: var(--nue-bg);
+  --neutral-secondary-medium: var(--nue-surface-muted);
+  --neutral-secondary-strong: #e5e5e5;
+  --neutral-tertiary-soft: var(--nue-bg);
+  --neutral-tertiary: var(--nue-surface-muted);
+  --neutral-tertiary-medium: var(--nue-surface-muted);
+  --neutral-quaternary: #d4d4d4;
 
-  --vea-bg: var(--vea-paper);
-  --vea-bg-subtle: var(--vea-paper-muted);
-  --vea-bg-muted: var(--vea-paper-muted);
-  --vea-bg-elevated: #ffffff;
-  --vea-bg-dark: #071008;
-  --vea-stone: var(--vea-paper-muted);
-  --vea-stone-deep: var(--vea-paper-deep);
-  --vea-sand: var(--vea-paper-deep);
+  --brand-softer: #f0f0f0;
+  --brand-soft: #e5e5e5;
+  --brand: var(--nue-text);
+  --brand-medium: rgba(10, 10, 10, 0.08);
+  --brand-strong: #333333;
+  --brand-ink: #ffffff;
+  --brand-button: var(--nue-button);
+  --brand-button-hover: var(--nue-button-hover);
+  --brand-button-text: var(--nue-button-text);
+  --brand-button-text-hover: var(--nue-button-text-hover);
 
-  /* Contrast-safe text (≥4.5:1 on paper / white) */
-  --vea-text-primary: var(--vea-ink);
-  --vea-text-secondary: #2a332f;
-  --vea-text-muted: #454e4a;
-  --vea-text-subtle: #5c6561;
-  --vea-text-inverse: #f4f6f5;
-  --vea-text-inverse-secondary: rgba(244, 246, 245, 0.88);
-  --vea-text-inverse-muted: rgba(244, 246, 245, 0.68);
+  --success-soft: #ecfdf5;
+  --success: #007a55;
+  --danger-soft: #fef0f2;
+  --danger: #c70036;
+  --warning-soft: #fff7ed;
+  --warning: #f97316;
 
-  --vea-border: rgba(7, 16, 8, 0.12);
-  --vea-border-strong: rgba(7, 16, 8, 0.22);
-  --vea-border-w: 1px;
+  --dark: #0a0a0a;
+  --dark-strong: #000000;
+  --disabled: #e5e5e5;
 
-  --vea-sage: var(--vea-brand);
-  --vea-sage-light: var(--vea-brand-light);
-  --vea-sage-muted: var(--vea-brand-muted);
-  --vea-gold: #8a6d1f;
-  --vea-coral: var(--vea-brand);
+  --heading: var(--nue-text);
+  --body: var(--nue-text-body);
+  --body-subtle: var(--nue-text-secondary);
+  --body-muted: var(--nue-text-muted);
+  --fg-brand: var(--nue-text);
+  --fg-brand-strong: var(--nue-text);
+  --fg-disabled: #737373;
+  --fg-success-strong: var(--success);
 
-  /* Glass — opaque enough for contrast */
-  --vea-glass-bg: rgba(255, 255, 255, 0.88);
-  --vea-glass-bg-muted: rgba(255, 255, 255, 0.72);
-  --vea-glass-border: rgba(7, 16, 8, 0.1);
-  --vea-glass-border-strong: rgba(7, 16, 8, 0.18);
-  --vea-glass-blur: 16px;
-  --vea-glass-shadow: 0 4px 24px rgba(7, 16, 8, 0.07);
-  --vea-glass-shadow-hover: 0 8px 32px rgba(7, 16, 8, 0.11);
+  --border-default: var(--nue-border);
+  --border-default-medium: var(--nue-border-strong);
+  --border-default-strong: var(--nue-border-strong);
+  --border-brand-subtle: var(--nue-border);
+  --border-brand: var(--nue-text);
+  --border-buffer: var(--nue-bg);
 
-  --vea-glass-dark-bg: rgba(7, 16, 8, 0.82);
-  --vea-glass-dark-border: rgba(255, 255, 255, 0.14);
+  --glow-brand: transparent;
+  --glow-brand-strong: transparent;
 
-  /* Subtle mesh — does not compete with content */
-  --vea-mesh-a: #e0ebe6;
-  --vea-mesh-b: #ecf1ee;
-  --vea-mesh-c: #eae8e4;
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: none;
 
-  /* Typography */
-  --vea-text-xs: 0.75rem;
-  --vea-text-sm: 0.875rem;
-  --vea-text-base: 1rem;
-  --vea-text-lg: 1.125rem;
-  --vea-text-xl: 1.25rem;
-  --vea-text-2xl: 1.5rem;
-  --vea-text-3xl: clamp(1.625rem, 4vw, 2rem);
-  --vea-text-4xl: clamp(2rem, 5vw, 2.5rem);
-  --vea-text-5xl: clamp(2.25rem, 6vw, 3.25rem);
-  --vea-text-6xl: clamp(2.5rem, 7vw, 4rem);
-  --vea-text-7xl: clamp(2.75rem, 8vw, 4.75rem);
+  --radius-base: 12px;
+  --radius-default: 12px;
+  --radius-sm: 8px;
+  --radius-full: 9999px;
+  --radius-pill: 40px;
 
-  --vea-leading-tight: 1.08;
-  --vea-leading-snug: 1.25;
-  --vea-leading-normal: 1.6;
-  --vea-leading-relaxed: 1.65;
+  --container-max: 1400px;
+  --container-narrow: 52rem;
+  --container-padding: clamp(16px, 5vw, 104px);
+  --section-padding-y: clamp(60px, 10vw, 120px);
+  --section-gap: clamp(80px, 12vw, 120px);
+  --section-header-gap: clamp(32px, 5vw, 48px);
+  --grid-gap: 24px;
+  --grid-gap-wide: 40px;
+  --split-gap: var(--grid-gap-wide);
+  --panel-padding-lg: 32px;
+  --card-body-gap: 8px;
+  --card-footer-pt: 16px;
+  --product-stage-bg: var(--nue-surface-muted);
+  --stack-xs: 0.5rem;
+  --stack-sm: 1rem;
+  --stack-md: 1.5rem;
+  --stack-lg: 2rem;
 
-  --vea-tracking-tight: -0.03em;
-  --vea-tracking-normal: -0.01em;
-  --vea-tracking-wide: 0.04em;
-  --vea-tracking-wider: 0.08em;
+  --text-h1: clamp(2rem, 5vw, 3rem);
+  --text-h2: clamp(1.75rem, 3.5vw, 2.75rem);
+  --text-h3: clamp(1.5rem, 2.5vw, 2rem);
+  --text-h4: clamp(1.25rem, 2vw, 1.5rem);
+  --text-h5: 1.25rem;
+  --text-h6: 1.125rem;
+  --text-lead: clamp(1rem, 1.5vw, 1.25rem);
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
 
-  /* Layout — one rhythm everywhere */
-  --vea-gutter: clamp(1rem, 4vw, 1.75rem);
-  --vea-container: min(1120px, 100% - 2 * var(--vea-gutter));
-  --vea-container-xl: var(--vea-container);
-  --vea-container-2xl: var(--vea-container);
-  --vea-measure: 34rem;
-  --vea-measure-wide: 40rem;
-  --vea-header-h: 3.75rem;
+  --white: #ffffff;
 
-  --vea-section-y: clamp(3.5rem, 7vw, 5.5rem);
-  --vea-section-header-gap: 2rem;
-  --vea-grid-gap: 1.25rem;
-  --vea-card-padding: 1.25rem;
-
-  /* One radius family */
-  --vea-radius-sm: 8px;
-  --vea-radius-md: 12px;
-  --vea-radius-lg: 12px;
-  --vea-radius-xl: 12px;
-  --vea-radius-full: 9999px;
-
-  --vea-shadow-sm: var(--vea-glass-shadow);
-  --vea-shadow-md: var(--vea-glass-shadow-hover);
-  --vea-shadow-lg: 0 12px 40px rgba(7, 16, 8, 0.12);
-
-  --vea-rule-thin: 1px;
-
-  --vea-space-12: 3rem;
-  --vea-space-16: 4rem;
-  --vea-space-20: 5rem;
-  --vea-space-24: 6rem;
-  --vea-space-32: 8rem;
-
-  --vea-duration-base: 180ms;
-  --vea-duration-slow: 320ms;
+  --vea-bg: var(--nue-bg);
+  --vea-text-primary: var(--heading);
+  --vea-text-secondary: var(--body);
+  --vea-text-muted: var(--body-subtle);
+  --vea-text-subtle: var(--body-subtle);
+  --vea-text-inverse: var(--white);
+  --vea-text-inverse-secondary: rgba(255, 255, 255, 0.85);
+  --vea-text-inverse-muted: rgba(255, 255, 255, 0.65);
+  --vea-brand: var(--brand);
+  --vea-brand-hover: var(--brand-strong);
+  --vea-brand-muted: var(--brand-softer);
+  --vea-gutter: var(--container-padding);
+  --vea-container-xl: var(--container-max);
+  --vea-measure: 36rem;
+  --vea-section-y: var(--section-padding-y);
+  --vea-section-header-gap: var(--section-header-gap);
+  --vea-grid-gap: var(--grid-gap);
+  --vea-card-padding: 24px;
+  --vea-header-h: 4.5rem;
+  --vea-radius-lg: var(--radius-base);
+  --vea-border: var(--nue-border);
+  --vea-ink: var(--nue-text);
+  --vea-leading-tight: 1;
+  --vea-tracking-tight: -0.02em;
+  --vea-text-5xl: var(--text-h1);
+  --vea-text-3xl: var(--text-h3);
+  --vea-text-lg: var(--text-h6);
+  --vea-text-sm: var(--text-small);
+  --radius-cards: var(--radius-base);
+  --color-fog: var(--nue-surface-muted);
+  --vea-duration-base: 220ms;
+  --vea-duration-slow: 380ms;
   --vea-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (min-width: 768px) {
-  :root {
-    --vea-header-h: 4rem;
-    --vea-grid-gap: 1.5rem;
-    --vea-card-padding: 1.5rem;
-    --vea-section-header-gap: 2.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --vea-gutter: 2rem;
-    --vea-grid-gap: 1.75rem;
-  }
 }

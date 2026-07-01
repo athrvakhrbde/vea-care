@@ -45,11 +45,18 @@ type CardMediaProps = {
   children: React.ReactNode;
   badge?: React.ReactNode;
   className?: string;
+  variant?: "default" | "product";
 };
 
-export function CardMedia({ children, badge, className }: CardMediaProps) {
+export function CardMedia({ children, badge, className, variant = "default" }: CardMediaProps) {
   return (
-    <div className={cn("relative aspect-card shrink-0 bg-[var(--vea-paper-muted)]", className)}>
+    <div
+      className={cn(
+        "relative shrink-0 overflow-hidden",
+        variant === "product" ? "product-stage aspect-product" : "aspect-card bg-[var(--nue-surface)] border-b border-[var(--nue-border)]",
+        className,
+      )}
+    >
       {children}
       {badge}
     </div>
@@ -87,4 +94,8 @@ export function CardFooter({ children, className }: { children: React.ReactNode;
 
 export function CardQuote({ children }: { children: React.ReactNode }) {
   return <p className="card-quote">{children}</p>;
+}
+
+export function CardAttribution({ children }: { children: React.ReactNode }) {
+  return <p className="card-attribution">{children}</p>;
 }

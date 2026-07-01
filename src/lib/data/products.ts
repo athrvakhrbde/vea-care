@@ -24,12 +24,12 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "varicose-veins-relief-cream",
-    name: "Varicose Veins Relief Cream",
-    shortName: "Varicose Veins Cream",
+    name: "VEA Care Varicose Veins Relief Cream, 50g",
+    shortName: "Varicose Veins Relief Cream",
     description:
-      "Clinical-grade relief for tired, heavy legs. Improves venous return and reduces visible swelling.",
+      "Feel less heaviness and visible vein discomfort. Supports circulation and eases tired, aching legs.",
     longDescription:
-      "Formulated with clinically studied botanicals and circulation-supporting actives, VEA Varicose Veins Relief Cream targets the root causes of venous insufficiency — not just the symptoms. Lightweight, fast-absorbing, and designed for daily proactive care.",
+      "Formulated with clinically studied botanicals and circulation-supporting actives, VEA Varicose Veins Relief Cream targets the root causes of venous insufficiency, not just the symptoms. Lightweight, fast-absorbing, and designed for daily proactive care.",
     price: 689,
     compareAtPrice: 765,
     rating: 5.0,
@@ -56,12 +56,12 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "diabetic-foot-cream",
-    name: "Diabetic Foot Cream",
+    name: "VEA Care Diabetic Foot Cream, 50g",
     shortName: "Diabetic Foot Cream",
     description:
-      "Advanced hydration and structural care for compromised lower-limb skin integrity.",
+      "Protect, repair, and walk with confidence. Advanced care for dry cracks, burning soles, and compromised skin.",
     longDescription:
-      "VEA Diabetic Foot Cream delivers deep, clinical-grade hydration while supporting the skin barrier of feet at risk. Developed for daily preventive care — because healthy feet are the foundation of every movement.",
+      "VEA Diabetic Foot Cream delivers deep, clinical-grade hydration while supporting the skin barrier of feet at risk. Developed for daily preventive care, because healthy feet are the foundation of every movement.",
     price: 649,
     compareAtPrice: 721,
     rating: 5.0,

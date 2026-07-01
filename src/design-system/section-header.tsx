@@ -7,10 +7,10 @@ type SectionHeaderProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
-  tone?: "light" | "dark";
   className?: string;
   action?: React.ReactNode;
   spacing?: "default" | "none";
+  size?: "default" | "large";
 };
 
 export function SectionHeader({
@@ -18,39 +18,35 @@ export function SectionHeader({
   title,
   description,
   align = "left",
-  tone = "light",
   className,
   action,
   spacing = "default",
+  size = "default",
 }: SectionHeaderProps) {
-  const isDark = tone === "dark";
-
   return (
     <div
       className={cn(
         spacing === "default" && "mb-[var(--vea-section-header-gap)]",
-        action ? "flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between" : undefined,
+        action != null && "flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between",
+        align === "center" && "text-center",
         className,
       )}
     >
-      <div className={cn(align === "center" && "mx-auto text-center")}>
-        {eyebrow && (
-          <p className={cn("type-label", isDark ? "text-[var(--vea-text-inverse-muted)]" : undefined)}>
-            {eyebrow}
-          </p>
-        )}
+      <div className={cn(align === "center" && "mx-auto max-w-3xl")}>
+        {eyebrow && <span className="type-label">{eyebrow}</span>}
         <Heading
           as="h2"
-          level="h2"
-          className={cn("mt-3", isDark && "text-[var(--vea-text-inverse)]")}
+          level={size === "large" ? "h1" : "h2"}
+          className={cn("mt-3", align === "center" && "mx-auto")}
         >
           {title}
         </Heading>
         {description && (
           <Text
-            tone={isDark ? "inverse-secondary" : "secondary"}
+            tone="secondary"
+            size="lead"
             className={cn(
-              "mt-3 max-w-[var(--vea-measure)]",
+              "mt-4 max-w-[20rem] font-medium",
               align === "center" && "mx-auto",
             )}
           >

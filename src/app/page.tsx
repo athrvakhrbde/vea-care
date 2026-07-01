@@ -1,21 +1,21 @@
 import { BlogPreview } from "@/components/home/blog-preview";
-import { Categories } from "@/components/home/categories";
+import { FaqSection } from "@/components/home/faq-section";
 import { FeaturedProducts } from "@/components/home/featured-products";
+import { FeaturesSection } from "@/components/home/features-section";
 import { Hero } from "@/components/home/hero";
-import { Newsletter } from "@/components/home/newsletter";
+import { HowItWorks } from "@/components/home/how-it-works";
 import { Testimonials } from "@/components/home/testimonials";
-import { WhyVeaPreview } from "@/components/home/why-vea-preview";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="main-sections pb-[var(--section-gap)]">
       <Hero />
+      <HowItWorks />
       <FeaturedProducts />
-      <WhyVeaPreview />
-      <Categories />
+      <FeaturesSection />
       <Testimonials />
       <BlogPreview />
-      <Newsletter />
-    </>
+      <FaqSection />
+    </div>
   );
 }

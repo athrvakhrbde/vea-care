@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import "./globals.css";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "VEA — Proactive Lower-Limb Care",
+    default: "VEA | Proactive Lower-Limb Care",
     template: "%s | VEA",
   },
   description:
@@ -17,7 +23,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} h-full`}>
       <body className="page-bg flex min-h-dvh flex-col">
         <Header />
         <main className="flex-1">{children}</main>

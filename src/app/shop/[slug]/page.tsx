@@ -5,12 +5,14 @@ import {
   Button,
   Container,
   Divider,
+  Heading,
+  PriceRow,
   Section,
   SplitSection,
   Text,
   VeaImage,
 } from "@/design-system";
-import { formatPrice, getProductBySlug, products } from "@/lib/data/products";
+import { getProductBySlug, products } from "@/lib/data/products";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -27,64 +29,81 @@ export default async function ProductPage({ params }: Props) {
   const product = getProductBySlug((await params).slug);
   if (!product) notFound();
 
-  const discount = Math.round(
-    ((product.compareAtPrice - product.price) / product.compareAtPrice) * 100,
-  );
-
   return (
     <Section padding="lg">
       <Container>
         <SplitSection
           reverse
           image={
-            <div className="relative aspect-product">
-              <VeaImage image={product.image} priority className="absolute inset-0" sizes="50vw" />
+            <div className="product-frame aspect-product">
+              <VeaImage
+                image={product.image}
+                priority
+                stage="product"
+                sizes="50vw"
+                fit="contain"
+                rounded={false}
+                bare
+                zoom={false}
+              />
             </div>
           }
         >
-          <div>
-            {product.badge && <Badge variant="brand">{product.badge}</Badge>}
-            <h1 className="mt-3 text-[var(--vea-text-5xl)] font-medium leading-[var(--vea-leading-tight)] tracking-[var(--vea-tracking-tight)]">
+          <div className="content-stack">
+            {product.badge && (
+              <Badge variant="brand" pill>
+                {product.badge}
+              </Badge>
+            )}
+            <Heading as="h1" level="h1">
               {product.name}
-            </h1>
-            <Text tone="secondary" className="mt-4 max-w-lg">
+            </Heading>
+            <Text tone="secondary" size="lead" className="max-w-lg">
               {product.longDescription}
             </Text>
-            <div className="mt-6 flex items-baseline gap-3">
-              <span className="text-[var(--vea-text-3xl)] font-medium">{formatPrice(product.price)}</span>
-              <span className="text-[var(--vea-text-lg)] text-[var(--vea-text-subtle)] line-through">
-                {formatPrice(product.compareAtPrice)}
-              </span>
-              {discount > 0 && <Badge variant="sale">−{discount}%</Badge>}
-            </div>
-            <p className="type-meta mt-3">
+            <PriceRow
+              price={product.price}
+              compareAtPrice={product.compareAtPrice}
+              size="lg"
+            />
+            <p className="type-meta">
               ★ {product.rating} · {product.reviewCount} reviews · {product.size}
             </p>
-            <div className="mt-8 flex gap-3">
-              <Button size="lg">Add to cart</Button>
+            <div className="flex flex-wrap gap-3">
+              <Button href="/contact" size="lg">
+                Order now
+              </Button>
               <Button href="/shop" variant="outline" size="lg">
-                Back
+                Back to shop
               </Button>
             </div>
           </div>
         </SplitSection>
 
-        <Divider className="my-12" />
+        <Divider className="my-[var(--vea-section-header-gap)]" />
 
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <h2 className="text-[var(--vea-text-lg)] font-medium">Benefits</h2>
-            <ul className="mt-4 space-y-3 text-[var(--vea-text-sm)] text-[var(--vea-text-secondary)]">
+        <div className="grid-uniform lg:grid-cols-2">
+          <div className="panel panel-padding">
+            <Heading as="h2" level="h4">
+              Benefits
+            </Heading>
+            <ul className="mt-4 space-y-3">
               {product.benefits.map((b) => (
-                <li key={b}>{b}</li>
+                <li key={b}>
+                  <Text tone="secondary" size="small">
+                    {b}
+                  </Text>
+                </li>
               ))}
             </ul>
           </div>
-          <div>
-            <h2 className="text-[var(--vea-text-lg)] font-medium">Ingredients</h2>
+          <div className="panel panel-padding">
+            <Heading as="h2" level="h4">
+              Ingredients
+            </Heading>
             <div className="mt-4 flex flex-wrap gap-2">
               {product.ingredients.map((i) => (
-                <Badge key={i} variant="muted">
+                <Badge key={i} variant="muted" pill>
                   {i}
                 </Badge>
               ))}

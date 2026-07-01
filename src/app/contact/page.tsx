@@ -1,7 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Button, CardBody, CardDescription, CardShell, CardTitle, Container, Input, PageHeader, Section, Text } from "@/design-system";
+import {
+  Button,
+  Container,
+  Heading,
+  Input,
+  PageHeader,
+  Section,
+  Text,
+  Textarea,
+} from "@/design-system";
 
 const faqs = [
   {
@@ -28,28 +37,24 @@ export default function ContactPage() {
   return (
     <>
       <Section padding="lg">
-        <Container size="narrow">
+        <Container>
           <PageHeader
             eyebrow="Contact"
             title="Get in touch"
-            description="Questions about our products, your order, or lower-limb care. We're here to help."
+            description="Questions about our products, your order, or lower-limb care."
           />
-        </Container>
-      </Section>
 
-      <Section padding="none" className="pb-[var(--vea-section-y)]">
-        <Container>
-          <div className="grid gap-16 lg:grid-cols-2">
-            <div>
+          <div className="layout-split">
+            <div className="panel panel-padding-lg">
               {submitted ? (
-                <CardShell>
-                  <CardBody>
-                    <CardTitle>Message sent</CardTitle>
-                    <CardDescription>
-                      Thank you for reaching out. We&apos;ll get back to you within 24–48 hours.
-                    </CardDescription>
-                  </CardBody>
-                </CardShell>
+                <div className="content-stack">
+                  <Heading as="h2" level="h5">
+                    Message sent
+                  </Heading>
+                  <Text tone="secondary" className="font-medium">
+                    Thank you for reaching out. We&apos;ll get back to you within 24–48 hours.
+                  </Text>
+                </div>
               ) : (
                 <form
                   className="space-y-6"
@@ -60,18 +65,7 @@ export default function ContactPage() {
                 >
                   <Input label="Name" name="name" required />
                   <Input label="Email" name="email" type="email" required />
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="type-label">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={5}
-                      required
-                      className="w-full rounded-[var(--vea-radius-md)] border border-[var(--vea-border-strong)] bg-[var(--vea-bg-elevated)] px-4 py-3 text-[var(--vea-text-primary)] focus:border-[var(--vea-brand)] focus:outline-none focus:ring-2 focus:ring-[var(--vea-brand-muted)]"
-                    />
-                  </div>
+                  <Textarea label="Message" name="message" rows={5} required />
                   <Button type="submit" size="lg">
                     Send message
                   </Button>
@@ -79,19 +73,23 @@ export default function ContactPage() {
               )}
             </div>
 
-            <div className="space-y-10 lg:border-l lg:border-[var(--vea-border)] lg:pl-16">
+            <div className="content-stack lg:pl-[var(--split-gap)]">
               <div>
-                <h3 className="text-[var(--vea-text-lg)] font-medium">Email</h3>
+                <Heading as="h3" level="h6">
+                  Email
+                </Heading>
                 <a
                   href="mailto:hello@veacare.com"
-                  className="mt-2 block text-[var(--vea-text-base)] text-[var(--vea-brand)] transition-colors hover:text-[var(--vea-ink)]"
+                  className="mt-2 block font-medium text-[var(--nue-text)] underline underline-offset-4 hover:no-underline"
                 >
                   hello@veacare.com
                 </a>
               </div>
               <div>
-                <h3 className="text-[var(--vea-text-lg)] font-medium">Response time</h3>
-                <Text tone="secondary" className="mt-2">
+                <Heading as="h3" level="h6">
+                  Response time
+                </Heading>
+                <Text tone="muted" className="font-medium">
                   We typically respond within 24–48 business hours.
                 </Text>
               </div>
@@ -100,21 +98,17 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section variant="muted" id="faq">
+      <Section padding="lg" id="faq">
         <Container size="narrow">
-          <h2 className="text-[var(--vea-text-3xl)] font-medium tracking-[var(--vea-tracking-tight)]">
-            Frequently asked questions
-          </h2>
-          <div className="mt-10 divide-y divide-[var(--vea-border)]">
+          <PageHeader title="Frequently asked questions" spacing="none" />
+          <div className="mt-10">
             {faqs.map((faq) => (
-              <details key={faq.q} className="group py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+              <details key={faq.q} className="faq-row group">
+                <summary>
                   {faq.q}
-                  <span className="ml-4 text-[var(--vea-text-muted)] transition-transform group-open:rotate-45">
-                    +
-                  </span>
+                  <span className="faq-icon text-xl leading-none">+</span>
                 </summary>
-                <Text tone="secondary" className="mt-4 pr-8">
+                <Text tone="secondary" className="pb-6 pr-8 font-medium">
                   {faq.a}
                 </Text>
               </details>

@@ -14,9 +14,9 @@ export default function ShopPage() {
         <PageHeader
           eyebrow="Shop"
           title="Products"
-          description="Clinical lower-limb care — two formulas, daily prevention."
+          description="Clinical lower-limb care: two formulas, daily prevention."
         />
-        <div className="grid-uniform md:grid-cols-2">
+        <div className="grid-uniform grid-uniform-stretch lg:grid-cols-2">
           {products.map((p, i) => (
             <ProductCard key={p.id} product={p} priority={i === 0} />
           ))}

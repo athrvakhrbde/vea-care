@@ -37,7 +37,7 @@ export function MediaCard({
         <VeaImage
           image={image}
           priority={priority}
-          className="absolute inset-0"
+          stage="card"
           sizes={sizes}
           rounded={false}
         />

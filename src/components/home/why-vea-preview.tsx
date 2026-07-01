@@ -1,32 +1,72 @@
 import { Button, Container, Section, SectionHeader, SplitSection, Text, VeaImage } from "@/design-system";
 import { images } from "@/lib/data/images";
 
+const problems = [
+  { lead: "Stop waiting for", key: "pain and injury" },
+  { lead: "Move beyond", key: "reactive lower-limb care" },
+  { lead: "Build a daily", key: "prevention routine" },
+];
+
 export function WhyVeaPreview() {
   return (
-    <Section variant="muted">
+    <Section>
       <Container>
         <SplitSection
           image={
-            <div className="relative aspect-product">
-              <VeaImage image={images.whyVea} className="absolute inset-0" sizes="(max-width:1024px) 90vw, 50vw" />
+            <div className="grid grid-cols-2 gap-[var(--grid-gap)]">
+              <div className="product-frame aspect-card">
+                <VeaImage
+                  image={images.products.circulation}
+                  className="absolute inset-0"
+                  sizes="25vw"
+                  fit="contain"
+                  rounded={false}
+                />
+              </div>
+              <div className="product-frame mt-8 aspect-card">
+                <VeaImage
+                  image={images.products.skin}
+                  className="absolute inset-0"
+                  sizes="25vw"
+                  fit="contain"
+                  rounded={false}
+                />
+              </div>
             </div>
           }
         >
-          <div className="panel panel-padding panel-padding-lg">
+          <div className="panel panel-padding-lg content-stack">
             <SectionHeader
               spacing="none"
+              align="left"
               eyebrow="Why VEA"
-              title="Care before something goes wrong"
-              description="Most lower-limb products react to damage. VEA is built for daily prevention."
+              title="Because movement shouldn't break you"
+              description="For years, lower-limb care has been reactive. VEA is built for daily prevention, before pain, injury, or discomfort show up."
             />
-            <Text tone="secondary" className="mt-4 max-w-md">
-              Clinical actives. Dermatologist-tested. Designed for your routine.
+            <Text tone="muted" className="max-w-lg font-medium">
+              Clinical actives at effective doses. Dermatologist-tested. Two products that cover the essentials.
             </Text>
-            <Button href="/why-vea" variant="outline" className="mt-8">
-              Learn more
+            <Button href="/why-vea" variant="outline">
+              Discover our story
             </Button>
           </div>
         </SplitSection>
+
+        <div className="mt-[var(--vea-section-header-gap)]">
+          <SectionHeader
+            spacing="none"
+            eyebrow="The shift"
+            title="We solve the bottlenecks in lower-limb care"
+          />
+          <ul className="mt-10 grid-uniform lg:grid-cols-3">
+            {problems.map((item) => (
+              <li key={item.key} className="step-card">
+                <span className="type-step">{item.lead}</span>
+                <h3 className="step-title">{item.key}</h3>
+              </li>
+            ))}
+          </ul>
+        </div>
       </Container>
     </Section>
   );

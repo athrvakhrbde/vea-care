@@ -8,9 +8,10 @@ import {
   CardMeta,
   CardMetaSlot,
   CardTitle,
+  PriceRow,
   VeaImage,
 } from "@/design-system";
-import { formatPrice, type Product } from "@/lib/data/products";
+import { type Product } from "@/lib/data/products";
 
 export function ProductCard({
   product,
@@ -19,17 +20,16 @@ export function ProductCard({
   product: Product;
   priority?: boolean;
 }) {
-  const discount = Math.round(
-    ((product.compareAtPrice - product.price) / product.compareAtPrice) * 100,
-  );
-
   return (
     <CardLink href={`/shop/${product.slug}`}>
       <CardMedia
+        variant="product"
         badge={
           product.badge ? (
-            <div className="absolute left-3 top-3">
-              <Badge variant="muted">{product.badge}</Badge>
+            <div className="absolute left-3 top-3 z-[3]">
+              <Badge variant="brand" pill>
+                {product.badge}
+              </Badge>
             </div>
           ) : undefined
         }
@@ -37,9 +37,12 @@ export function ProductCard({
         <VeaImage
           image={product.image}
           priority={priority}
-          className="absolute inset-0"
+          stage="product"
           sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
           rounded={false}
+          fit="contain"
+          bare
+          zoom={false}
         />
       </CardMedia>
       <CardBody>
@@ -51,15 +54,7 @@ export function ProductCard({
         <CardTitle>{product.shortName}</CardTitle>
         <CardDescription>{product.description}</CardDescription>
         <CardFooter>
-          <div className="flex flex-wrap items-baseline gap-2">
-            <span className="text-[var(--vea-text-xl)] font-semibold text-[var(--vea-text-primary)]">
-              {formatPrice(product.price)}
-            </span>
-            <span className="text-[var(--vea-text-sm)] text-[var(--vea-text-subtle)] line-through">
-              {formatPrice(product.compareAtPrice)}
-            </span>
-            {discount > 0 && <Badge variant="sale">−{discount}%</Badge>}
-          </div>
+          <PriceRow price={product.price} compareAtPrice={product.compareAtPrice} />
         </CardFooter>
       </CardBody>
     </CardLink>

@@ -2,29 +2,36 @@ import { cn } from "@/lib/utils";
 
 type TextProps = {
   as?: "p" | "span" | "div";
-  size?: "xs" | "sm" | "base" | "lg";
-  tone?: "primary" | "secondary" | "muted" | "inverse" | "inverse-secondary" | "inverse-muted";
+  size?: "caption" | "small" | "body" | "lead";
+  tone?: "primary" | "secondary" | "muted" | "brand" | "inverse" | "inverse-secondary" | "inverse-muted";
   children: React.ReactNode;
   className?: string;
 };
 
-export function Text({ as: Tag = "p", size = "base", tone = "primary", children, className }: TextProps) {
+export function Text({
+  as: Tag = "p",
+  size = "body",
+  tone = "primary",
+  children,
+  className,
+}: TextProps) {
   const sizes = {
-    xs: "text-[var(--vea-text-xs)]",
-    sm: "text-[var(--vea-text-sm)]",
-    base: "text-[var(--vea-text-base)]",
-    lg: "text-[var(--vea-text-lg)]",
+    caption: "text-[length:var(--text-caption)] leading-[1.6]",
+    small: "text-[length:var(--text-small)] leading-[1.625]",
+    body: "text-[length:var(--text-body)] leading-[1.7]",
+    lead: "text-[length:var(--text-lead)] leading-[1.7]",
   };
   const tones = {
-    primary: "text-[var(--vea-text-primary)]",
-    secondary: "text-[var(--vea-text-secondary)]",
-    muted: "text-[var(--vea-text-muted)]",
-    inverse: "text-[var(--vea-text-inverse)]",
-    "inverse-secondary": "text-[var(--vea-text-inverse-secondary)]",
-    "inverse-muted": "text-[var(--vea-text-inverse-muted)]",
+    primary: "text-[color:var(--heading)]",
+    secondary: "text-[color:var(--body)]",
+    muted: "text-[color:var(--body-muted)]",
+    brand: "text-[color:var(--fg-brand)]",
+    inverse: "text-[color:var(--white)]",
+    "inverse-secondary": "text-[color:var(--vea-text-inverse-secondary)]",
+    "inverse-muted": "text-[color:var(--vea-text-inverse-muted)]",
   };
   return (
-    <Tag className={cn("leading-[var(--vea-leading-relaxed)]", sizes[size], tones[tone], className)}>
+    <Tag className={cn(sizes[size], tones[tone], className)}>
       {children}
     </Tag>
   );

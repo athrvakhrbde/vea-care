@@ -3,28 +3,22 @@ import { images } from "@/lib/data/images";
 
 const items = [
   {
-    title: "Circulation",
-    desc: "Varicose veins & leg heaviness",
-    href: "/shop/varicose-veins-relief-cream",
-    image: images.categories.circulation,
-  },
-  {
-    title: "Skin care",
-    desc: "Diabetic foot & dry skin",
-    href: "/shop/diabetic-foot-cream",
-    image: images.categories.skin,
+    title: "Performance",
+    desc: "Improve alignment, reduce fatigue, and unlock efficient movement.",
+    href: "/shop",
+    image: images.categories.performance,
   },
   {
     title: "Recovery",
-    desc: "Post-workout soreness",
+    desc: "Ease soreness, joint stress, and post-workout fatigue.",
     href: "/shop",
     image: images.categories.recovery,
   },
   {
-    title: "Performance",
-    desc: "Alignment & fatigue",
-    href: "/shop",
-    image: images.categories.performance,
+    title: "Feel Lighter",
+    desc: "Support circulation, reduce heaviness, and keep legs energised.",
+    href: "/shop/varicose-veins-relief-cream",
+    image: images.categories.feelLighter,
   },
 ];
 
@@ -32,8 +26,11 @@ export function Categories() {
   return (
     <Section>
       <Container>
-        <SectionHeader eyebrow="Solutions" title="What do you need?" />
-        <div className="grid-uniform md:grid-cols-2 lg:grid-cols-4">
+        <SectionHeader
+          eyebrow="Solutions"
+          title="What are you looking to solve today?"
+        />
+        <div className="grid-uniform lg:grid-cols-3">
           {items.map((item) => (
             <MediaCard
               key={item.title}
@@ -41,7 +38,7 @@ export function Categories() {
               image={item.image}
               title={item.title}
               description={item.desc}
-              sizes="25vw"
+              sizes="33vw"
             />
           ))}
         </div>

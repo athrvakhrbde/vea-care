@@ -7,45 +7,32 @@ type PageHeaderProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
-  tone?: "light" | "dark";
   className?: string;
+  spacing?: "default" | "none";
 };
 
 export function PageHeader({
   eyebrow,
   title,
   description,
-  align = "left",
-  tone = "light",
+  align = "center",
   className,
+  spacing = "default",
 }: PageHeaderProps) {
-  const isDark = tone === "dark";
-
   return (
     <header
       className={cn(
-        "panel panel-padding mb-[var(--vea-section-header-gap)]",
-        align === "center" && "text-center",
+        spacing === "default" && "mb-[var(--vea-section-header-gap)]",
+        align === "center" && "mx-auto max-w-3xl text-center",
         className,
       )}
     >
-      {eyebrow && (
-        <p className={cn("type-label", isDark && "text-[var(--vea-text-inverse-muted)]")}>
-          {eyebrow}
-        </p>
-      )}
-      <Heading
-        as="h1"
-        level="h1"
-        className={cn("mt-3", isDark && "text-[var(--vea-text-inverse)]")}
-      >
+      {eyebrow && <span className="type-label">{eyebrow}</span>}
+      <Heading as="h1" level="h1" className="mt-3">
         {title}
       </Heading>
       {description && (
-        <Text
-          tone={isDark ? "inverse-secondary" : "secondary"}
-          className={cn("mt-4 max-w-[var(--vea-measure)]", align === "center" && "mx-auto")}
-        >
+        <Text tone="secondary" size="lead" className={cn("mt-4 mx-auto max-w-[20rem] font-medium")}>
           {description}
         </Text>
       )}
