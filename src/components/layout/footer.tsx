@@ -8,10 +8,13 @@ export function Footer() {
       <Container className="py-[var(--section-padding-y)]">
         <Grid12>
           <Col span={3}>
-            <Link href="/" className="text-[length:var(--text-h5)] font-medium tracking-[-0.02em] text-[color:var(--nue-text)]">
+            <Link
+              href="/"
+              className="font-[family-name:var(--font-serif)] text-[length:var(--text-h5)] font-semibold tracking-[-0.02em] text-[color:var(--bot-foreground)]"
+            >
               VEA
             </Link>
-            <p className="mt-3 max-w-xs text-[length:var(--text-small)] font-medium text-[color:var(--nue-text-secondary)]">
+            <p className="mt-3 max-w-xs text-[length:var(--text-small)] text-[color:var(--bot-muted)]">
               Proactive lower-limb care. Formulated by Wellchi Biotech.
             </p>
           </Col>
@@ -35,7 +38,7 @@ function FooterCol({
 }) {
   return (
     <Col span={3} mdSpan={4}>
-      <p className="text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.08em] text-[color:var(--nue-text-muted)]">
+      <p className="text-[length:var(--text-caption)] font-medium uppercase tracking-[0.12em] text-[color:var(--bot-sage)]">
         {title}
       </p>
       <ul className="mt-4 space-y-2.5">
@@ -43,7 +46,7 @@ function FooterCol({
           <li key={l.label}>
             <Link
               href={l.href}
-              className="text-[length:var(--text-small)] font-medium text-[color:var(--nue-text-secondary)] transition-colors hover:text-[color:var(--nue-text)]"
+              className="text-[length:var(--text-small)] text-[color:var(--bot-muted)] transition-colors duration-[var(--vea-duration-fast)] hover:text-[color:var(--bot-terracotta)]"
             >
               {l.label}
             </Link>

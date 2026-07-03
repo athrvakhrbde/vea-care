@@ -21,46 +21,47 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variants: Record<ButtonVariant, string> = {
   primary: cn(
-    "bg-[var(--nue-button)] text-[color:var(--nue-button-text)]",
-    "hover:bg-[var(--nue-button-hover)] hover:text-[color:var(--nue-button-text-hover)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--nue-text)] focus-visible:ring-offset-2",
+    "bg-[var(--bot-foreground)] text-[color:var(--bot-white)]",
+    "hover:bg-[var(--bot-terracotta)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
   ),
   secondary: cn(
-    "bg-[var(--nue-surface-muted)] text-[color:var(--nue-text)] border border-[var(--nue-border-strong)]",
-    "hover:bg-[var(--nue-surface)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--nue-text)] focus-visible:ring-offset-2",
+    "bg-transparent text-[color:var(--bot-sage)] border border-[var(--bot-sage)]",
+    "hover:bg-[var(--bot-clay-soft)] hover:text-[color:var(--bot-foreground)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
   ),
   outline: cn(
-    "bg-[var(--nue-surface)] text-[color:var(--nue-text)] border border-[var(--nue-border-strong)]",
-    "hover:bg-[var(--nue-surface-muted)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--nue-text)] focus-visible:ring-offset-2",
+    "bg-transparent text-[color:var(--bot-sage)] border border-[var(--bot-sage)]",
+    "hover:bg-[var(--bot-clay-soft)] hover:text-[color:var(--bot-foreground)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
   ),
   ghost: cn(
-    "bg-transparent text-[color:var(--nue-text)]",
-    "hover:bg-[var(--nue-surface-muted)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--nue-text)] focus-visible:ring-offset-2",
+    "bg-transparent text-[color:var(--bot-foreground)]",
+    "hover:bg-[var(--bot-clay-soft)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
   ),
   dark: cn(
-    "bg-[var(--nue-button)] text-[color:var(--nue-button-text)]",
-    "hover:bg-[var(--nue-button-hover)] hover:text-[color:var(--nue-button-text-hover)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--nue-text)] focus-visible:ring-offset-2",
+    "bg-[var(--bot-foreground)] text-[color:var(--bot-white)]",
+    "hover:bg-[var(--bot-terracotta)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
   ),
 };
 
 const sizes: Record<ButtonSize, string> = {
-  xs: "h-8 px-4 text-[length:var(--text-caption)]",
-  sm: "h-9 px-5 text-[length:var(--text-small)]",
-  md: "h-11 px-6 text-[length:var(--text-small)]",
-  lg: "h-[52px] px-7 text-[length:var(--text-body)]",
-  xl: "h-14 px-8 text-[length:var(--text-body)] min-h-[48px] sm:min-h-0",
+  xs: "h-9 px-5 text-[length:var(--text-caption)]",
+  sm: "h-10 px-6 text-[length:var(--text-caption)]",
+  md: "h-12 px-7 text-[length:var(--text-small)]",
+  lg: "h-14 px-8 text-[length:var(--text-small)]",
+  xl: "h-14 px-10 text-[length:var(--text-body)] min-h-[48px] sm:min-h-0",
 };
 
 export function Button(props: ButtonProps) {
   const { variant = "primary", size = "md", className, children, ...rest } = props;
   const cls = cn(
-    "inline-flex items-center justify-center rounded-[var(--radius-pill)] font-medium",
-    "transition-colors duration-[var(--vea-duration-base)] disabled:cursor-not-allowed",
-    "disabled:bg-[var(--disabled)] disabled:text-[color:var(--fg-disabled)] disabled:shadow-none",
+    "inline-flex items-center justify-center rounded-[var(--radius-pill)]",
+    "font-medium uppercase tracking-[0.18em]",
+    "transition-all duration-[var(--vea-duration-fast)] ease-out",
+    "disabled:cursor-not-allowed disabled:bg-[var(--disabled)] disabled:text-[color:var(--fg-disabled)]",
     variants[variant],
     sizes[size],
     className,

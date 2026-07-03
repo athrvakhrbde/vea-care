@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils";
 
 const fieldClassName = cn(
-  "block w-full rounded-[var(--radius-base)] border border-[var(--nue-border-strong)]",
-  "bg-[var(--nue-surface)] px-3 py-2.5 text-[length:var(--text-small)] text-[color:var(--nue-text)]",
-  "placeholder:text-[color:var(--nue-text-muted)]",
-  "transition-all duration-[var(--vea-duration-base)]",
-  "hover:border-[var(--nue-text-muted)]",
-  "focus:border-[var(--nue-text)] focus:outline-none focus:ring-2 focus:ring-[var(--nue-text)] focus:ring-offset-1",
+  "block w-full rounded-[var(--radius-pill)] border-0",
+  "bg-[var(--bot-clay-soft)] px-5 py-3 text-[length:var(--text-small)] text-[color:var(--bot-foreground)]",
+  "placeholder:text-[color:var(--bot-muted)]",
+  "transition-all duration-[var(--vea-duration-fast)] ease-out",
+  "focus:bg-[var(--bot-white)] focus:outline-none focus:ring-2 focus:ring-[var(--bot-sage)] focus:ring-offset-1",
   "disabled:cursor-not-allowed disabled:bg-[var(--disabled)] disabled:text-[color:var(--fg-disabled)]",
 );
 
@@ -39,7 +38,7 @@ export function Input({ label, className, id, wrapperClassName, ...props }: Inpu
   const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
   return (
     <FieldWrapper label={label} id={inputId} wrapperClassName={wrapperClassName}>
-      <input id={inputId} className={cn("h-11", fieldClassName, className)} {...props} />
+      <input id={inputId} className={cn("h-12", fieldClassName, className)} {...props} />
     </FieldWrapper>
   );
 }
@@ -55,7 +54,7 @@ export function Textarea({ label, className, id, wrapperClassName, ...props }: T
     <FieldWrapper label={label} id={inputId} wrapperClassName={wrapperClassName}>
       <textarea
         id={inputId}
-        className={cn("min-h-[8rem] resize-y", fieldClassName, className)}
+        className={cn("min-h-[8rem] resize-y rounded-[var(--radius-base)]", fieldClassName, className)}
         {...props}
       />
     </FieldWrapper>

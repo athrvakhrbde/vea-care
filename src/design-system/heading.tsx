@@ -9,14 +9,16 @@ type HeadingProps = {
   className?: string;
 };
 
+const serif = "font-[family-name:var(--font-serif)] text-[color:var(--bot-foreground)]";
+
 const levels: Record<HeadingLevel, string> = {
   display: "type-display",
-  h1: "text-[length:var(--text-h1)] font-medium leading-[1.05] tracking-[-0.02em] text-[color:var(--nue-text)]",
-  h2: "text-[length:var(--text-h2)] font-medium leading-[1.1] tracking-[-0.02em] text-[color:var(--nue-text)]",
-  h3: "text-[length:var(--text-h3)] font-medium leading-[1.15] tracking-[-0.01em] text-[color:var(--nue-text)]",
-  h4: "text-[length:var(--text-h4)] font-medium leading-[1.2] tracking-[-0.01em] text-[color:var(--nue-text)]",
-  h5: "text-[length:var(--text-h5)] font-medium leading-[1.3] text-[color:var(--nue-text)]",
-  h6: "text-[length:var(--text-h6)] font-medium leading-[1.3] text-[color:var(--nue-text)]",
+  h1: cn(serif, "text-[length:var(--text-h1)] font-semibold leading-[1.05] tracking-[-0.02em]"),
+  h2: cn(serif, "text-[length:var(--text-h2)] font-semibold leading-[1.1] tracking-[-0.02em]"),
+  h3: cn(serif, "text-[length:var(--text-h3)] font-semibold leading-[1.15]"),
+  h4: cn(serif, "text-[length:var(--text-h4)] font-semibold leading-[1.2]"),
+  h5: cn(serif, "text-[length:var(--text-h5)] font-semibold leading-[1.3]"),
+  h6: cn(serif, "text-[length:var(--text-h6)] font-semibold leading-[1.3]"),
   label: "type-label",
 };
 
