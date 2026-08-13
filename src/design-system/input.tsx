@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 
 const fieldClassName = cn(
-  "block w-full rounded-[var(--radius-pill)] border-0",
-  "bg-[var(--bot-clay-soft)] px-5 py-3 text-[length:var(--text-small)] text-[color:var(--bot-foreground)]",
+  "block w-full rounded-[var(--radius-pill)] border border-[var(--bot-ash)]",
+  "bg-[var(--bot-bg)] px-5 py-3 text-[16px] text-[color:var(--bot-foreground)] md:text-[length:var(--text-small)]",
   "placeholder:text-[color:var(--bot-muted)]",
   "transition-all duration-[var(--vea-duration-fast)] ease-out",
-  "focus:bg-[var(--bot-white)] focus:outline-none focus:ring-2 focus:ring-[var(--bot-sage)] focus:ring-offset-1",
+  "focus:bg-[var(--bot-white)] focus:outline-none focus:ring-[3px] focus:ring-[color-mix(in_srgb,var(--bot-terracotta)_20%,transparent)] focus:ring-offset-0",
   "disabled:cursor-not-allowed disabled:bg-[var(--disabled)] disabled:text-[color:var(--fg-disabled)]",
 );
 

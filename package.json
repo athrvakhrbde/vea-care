@@ -6,7 +6,11 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "shopify:auth": "shopify store auth --store xshhuw-wx.myshopify.com --scopes read_products,write_products,read_orders,read_inventory",
+    "shopify:info": "shopify store info --store xshhuw-wx.myshopify.com",
+    "shopify:products": "shopify store execute --store xshhuw-wx.myshopify.com --query \"query { products(first: 20) { edges { node { title handle status variants(first: 5) { edges { node { id title price availableForSale } } } } } } }\"",
+    "shopify:sync": "node scripts/shopify-sync-products.mjs"
   },
   "dependencies": {
     "geist": "^1.7.2",

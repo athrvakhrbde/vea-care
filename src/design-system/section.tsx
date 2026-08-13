@@ -4,13 +4,14 @@ type SectionProps = {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  padding?: "default" | "lg" | "none";
+  padding?: "default" | "lg" | "page" | "none";
 };
 
 const paddingClasses = {
   none: "",
   default: "py-[var(--section-padding-y)]",
-  lg: "py-[calc(var(--section-padding-y)*1.15)]",
+  lg: "py-[var(--section-padding-y)]",
+  page: "pt-[var(--page-padding-top)] pb-[var(--section-padding-y)]",
 };
 
 export function Section({

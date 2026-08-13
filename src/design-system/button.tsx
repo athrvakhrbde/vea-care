@@ -21,29 +21,29 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const variants: Record<ButtonVariant, string> = {
   primary: cn(
-    "bg-[var(--bot-foreground)] text-[color:var(--bot-white)]",
-    "hover:bg-[var(--bot-terracotta)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
+    "bg-[var(--bot-terracotta)] text-[color:var(--bot-white)]",
+    "hover:bg-[var(--bot-terracotta-strong)]",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-terracotta)] focus-visible:ring-offset-2",
   ),
   secondary: cn(
-    "bg-transparent text-[color:var(--bot-sage)] border border-[var(--bot-sage)]",
+    "bg-transparent text-[color:var(--bot-terracotta)] border border-[1.5px] border-[var(--bot-terracotta)]",
     "hover:bg-[var(--bot-clay-soft)] hover:text-[color:var(--bot-foreground)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-terracotta)] focus-visible:ring-offset-2",
   ),
   outline: cn(
-    "bg-transparent text-[color:var(--bot-sage)] border border-[var(--bot-sage)]",
+    "bg-transparent text-[color:var(--bot-terracotta)] border border-[1.5px] border-[var(--bot-terracotta)]",
     "hover:bg-[var(--bot-clay-soft)] hover:text-[color:var(--bot-foreground)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-terracotta)] focus-visible:ring-offset-2",
   ),
   ghost: cn(
     "bg-transparent text-[color:var(--bot-foreground)]",
     "hover:bg-[var(--bot-clay-soft)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-terracotta)] focus-visible:ring-offset-2",
   ),
   dark: cn(
     "bg-[var(--bot-foreground)] text-[color:var(--bot-white)]",
     "hover:bg-[var(--bot-terracotta)]",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-sage)] focus-visible:ring-offset-2",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bot-terracotta)] focus-visible:ring-offset-2",
   ),
 };
 
@@ -58,7 +58,7 @@ const sizes: Record<ButtonSize, string> = {
 export function Button(props: ButtonProps) {
   const { variant = "primary", size = "md", className, children, ...rest } = props;
   const cls = cn(
-    "inline-flex items-center justify-center rounded-[var(--radius-pill)]",
+    "inline-flex items-center justify-center rounded-[var(--radius-buttons)]",
     "font-medium uppercase tracking-[0.18em]",
     "transition-all duration-[var(--vea-duration-fast)] ease-out",
     "disabled:cursor-not-allowed disabled:bg-[var(--disabled)] disabled:text-[color:var(--fg-disabled)]",

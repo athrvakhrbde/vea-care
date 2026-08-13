@@ -17,19 +17,23 @@ export function WhyVeaPreview() {
               <div className="product-frame aspect-card">
                 <VeaImage
                   image={images.products.circulation}
-                  className="absolute inset-0"
-                  sizes="25vw"
+                  stage="product"
+                  sizes="(max-width:1023px) 45vw, 25vw"
                   fit="contain"
                   rounded={false}
+                  bare
+                  zoom={false}
                 />
               </div>
               <div className="product-frame mt-8 aspect-card">
                 <VeaImage
                   image={images.products.skin}
-                  className="absolute inset-0"
-                  sizes="25vw"
+                  stage="product"
+                  sizes="(max-width:1023px) 45vw, 25vw"
                   fit="contain"
                   rounded={false}
+                  bare
+                  zoom={false}
                 />
               </div>
             </div>

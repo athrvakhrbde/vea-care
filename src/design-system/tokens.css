@@ -1,18 +1,20 @@
-/* Botanical / Organic Serif design tokens */
+/* Function — warm apothecary journal on parchment */
 
 :root {
   color-scheme: light;
 
   /* Core palette */
-  --bot-bg: #f9f8f4;
-  --bot-foreground: #2d3a31;
-  --bot-sage: #8c9a84;
-  --bot-clay: #dccfc2;
-  --bot-clay-soft: #f2f0eb;
-  --bot-border: #e6e2da;
-  --bot-terracotta: #c27b66;
-  --bot-white: #ffffff;
-  --bot-muted: #5a6658;
+  --bot-bg: #fef9ef;
+  --bot-foreground: #2a2b2f;
+  --bot-sage: #b05a36;
+  --bot-clay: #d1c9bf;
+  --bot-clay-soft: #f5eee1;
+  --bot-border: #e5ddd0;
+  --bot-terracotta: #b05a36;
+  --bot-terracotta-strong: #8f4a2c;
+  --bot-white: #f5eee1;
+  --bot-muted: #515151;
+  --bot-ash: #808988;
 
   /* Legacy aliases (components reference these) */
   --nue-bg: var(--bot-bg);
@@ -81,27 +83,30 @@
   --border-brand: var(--bot-sage);
   --border-buffer: var(--bot-bg);
 
-  --shadow-xs: 0 2px 4px rgba(45, 58, 49, 0.04);
-  --shadow-sm: 0 4px 6px -1px rgba(45, 58, 49, 0.05);
-  --shadow-md: 0 10px 15px -3px rgba(45, 58, 49, 0.05);
-  --shadow-lg: 0 20px 40px -10px rgba(45, 58, 49, 0.05);
-  --shadow-xl: 0 25px 50px -12px rgba(45, 58, 49, 0.15);
+  /* Two approved elevations only — subtle glow, and floating card/modal */
+  --shadow-xs: rgba(0, 0, 0, 0.15) 0px 0px 20px 0px;
+  --shadow-sm: rgba(0, 0, 0, 0.15) 0px 0px 20px 0px;
+  --shadow-md: rgba(42, 43, 47, 0.1) 12px 32px 80px 0px;
+  --shadow-lg: rgba(42, 43, 47, 0.1) 12px 32px 80px 0px;
+  --shadow-xl: rgba(42, 43, 47, 0.1) 12px 32px 80px 0px;
 
   --radius-base: 24px;
   --radius-default: 24px;
   --radius-sm: 16px;
   --radius-full: 9999px;
   --radius-pill: 9999px;
+  --radius-buttons: 40px;
   --radius-arch: 200px;
 
   --container-max: 80rem;
   --container-narrow: 52rem;
   --container-padding: clamp(1rem, 5vw, 2rem);
-  --section-padding-y: clamp(4rem, 10vw, 8rem);
-  --section-gap: clamp(4rem, 10vw, 8rem);
-  --section-header-gap: clamp(2rem, 4vw, 3rem);
-  --grid-gap: clamp(1.5rem, 3vw, 2rem);
-  --grid-gap-wide: clamp(2rem, 4vw, 4rem);
+  --section-padding-y: clamp(3rem, 7vw, 5rem);
+  --page-padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  --section-gap: clamp(2.5rem, 5vw, 4rem);
+  --section-header-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --grid-gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  --grid-gap-wide: clamp(1.5rem, 3vw, 3rem);
   --split-gap: var(--grid-gap-wide);
   --panel-padding-lg: clamp(1.5rem, 3vw, 2rem);
   --card-body-gap: 0.75rem;

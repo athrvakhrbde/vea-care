@@ -1,3 +1,5 @@
+export const TRACK_ORDER_URL = "https://www.shiprocket.in/shipment-tracking/";
+
 export const navLinks = [
   {
     label: "Shop",
@@ -20,18 +22,15 @@ export const footerLinks = {
   ],
   about: [
     { label: "About Us", href: "/about" },
-    { label: "Why VEA", href: "/why-vea" },
-    { label: "Blog", href: "/blog" },
+    { label: "Blogs", href: "/blog" },
+    { label: "Return & Exchange Policy", href: "/policies/returns" },
+    { label: "Privacy & Cookie Policy", href: "/policies/privacy" },
+    { label: "Terms & Conditions", href: "/policies/terms" },
+    { label: "Shipping Policy", href: "/policies/shipping" },
   ],
   help: [
-    { label: "Contact Us", href: "/contact" },
-    { label: "Track Order", href: "/contact" },
+    { label: "Contact us", href: "/contact" },
+    { label: "Track your order", href: TRACK_ORDER_URL, external: true },
     { label: "FAQs", href: "/contact#faq" },
-  ],
-  legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms & Conditions", href: "#" },
-    { label: "Shipping Policy", href: "#" },
-    { label: "Returns & Exchange", href: "#" },
   ],
 } as const;

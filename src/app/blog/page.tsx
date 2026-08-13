@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, MediaCard, PageHeader, Section } from "@/design-system";
+import { HScroll } from "@/components/shared/h-scroll";
 import { blogPosts, formatDate } from "@/lib/data/blog";
 
 export const metadata: Metadata = {
@@ -9,14 +10,16 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <Section padding="lg">
+    <Section padding="page">
       <Container>
         <PageHeader
           eyebrow="Journal"
           title="Blog"
           description="Science-backed insights on movement, recovery, and lower-limb wellness."
+          spacing="none"
+          className="mb-8"
         />
-        <div className="grid-uniform md:grid-cols-2 lg:grid-cols-3">
+        <HScroll itemWidth="80vw" desktopClassName="lg:grid lg:grid-cols-3">
           {blogPosts.map((post) => (
             <MediaCard
               key={post.slug}
@@ -25,10 +28,10 @@ export default function BlogPage() {
               title={post.title}
               description={post.excerpt}
               meta={`${formatDate(post.date)} · ${post.readTime}`}
-              sizes="(max-width: 768px) 100vw, 360px"
+              sizes="(max-width:1023px) 80vw, 33vw"
             />
           ))}
-        </div>
+        </HScroll>
       </Container>
     </Section>
   );

@@ -12,7 +12,11 @@ import {
   Text,
   VeaImage,
 } from "@/design-system";
+import { Ga4ViewItem } from "@/components/analytics/ga4-ecommerce-events";
+import { BuyButtons } from "@/components/shop/buy-buttons";
+import { JsonLd } from "@/components/shared/json-ld";
 import { getProductBySlug, products } from "@/lib/data/products";
+import { breadcrumbJsonLd, productJsonLd } from "@/lib/seo/json-ld";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -31,6 +35,15 @@ export default async function ProductPage({ params }: Props) {
 
   return (
     <Section padding="lg">
+      <JsonLd data={productJsonLd(product)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Shop", path: "/shop" },
+          { name: product.name, path: `/shop/${product.slug}` },
+        ])}
+      />
+      <Ga4ViewItem slug={product.slug} />
       <Container>
         <SplitSection
           reverse
@@ -40,7 +53,7 @@ export default async function ProductPage({ params }: Props) {
                 image={product.image}
                 priority
                 stage="product"
-                sizes="50vw"
+                sizes="(max-width:1023px) 100vw, 50vw"
                 fit="contain"
                 rounded={false}
                 bare
@@ -69,14 +82,10 @@ export default async function ProductPage({ params }: Props) {
             <p className="type-meta">
               ★ {product.rating} · {product.reviewCount} reviews · {product.size}
             </p>
-            <div className="flex flex-wrap gap-3">
-              <Button href="/contact" size="lg">
-                Order now
-              </Button>
-              <Button href="/shop" variant="outline" size="lg">
-                Back to shop
-              </Button>
-            </div>
+            <BuyButtons slug={product.slug} inStock={product.inStock} />
+            <Button href="/shop" variant="ghost" size="sm">
+              Back to shop
+            </Button>
           </div>
         </SplitSection>
 

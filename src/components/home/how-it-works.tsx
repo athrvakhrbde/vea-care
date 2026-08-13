@@ -1,5 +1,5 @@
-import { Button, Container, Section, VeaImage } from "@/design-system";
-import { images } from "@/lib/data/images";
+import { Button, Container, Section } from "@/design-system";
+import { HScroll } from "@/components/shared/h-scroll";
 
 const steps = [
   {
@@ -26,40 +26,27 @@ export function HowItWorks() {
   return (
     <Section padding="none">
       <Container>
-        <div className="layout-sticky">
-          <div className="layout-sticky-side">
-            <h2 className="type-display max-w-[16ch] text-balance">How it works</h2>
-            <p className="max-w-[20rem] text-[length:var(--text-lead)] font-medium leading-snug text-[color:var(--nue-text-secondary)]">
-              From product selection to daily prevention, VEA makes lower-limb care simple.
-            </p>
-            <Button href="/shop" className="hidden lg:inline-flex">
-              Shop now
-            </Button>
-          </div>
+        <div className="mb-[var(--vea-section-header-gap)] max-w-xl lg:mx-auto lg:text-center">
+          <h2 className="type-display max-w-[16ch] text-balance lg:mx-auto">How it works</h2>
+          <p className="mt-4 max-w-[28rem] text-[length:var(--text-lead)] font-medium leading-snug text-[color:var(--nue-text-secondary)] lg:mx-auto">
+            From product selection to daily prevention, VEA makes lower-limb care simple.
+          </p>
+        </div>
 
-          <div className="layout-sticky-main">
-            {steps.map((item) => (
-              <article key={item.step} className="step-card">
-                <span className="type-step">{item.step}</span>
-                <h3 className="step-title">{item.title}</h3>
-                <p className="step-desc">{item.description}</p>
-              </article>
-            ))}
-            <div className="product-frame aspect-product lg:hidden">
-              <VeaImage
-                image={images.products.circulation}
-                className="absolute inset-0"
-                sizes="90vw"
-                rounded={false}
-                fit="contain"
-                bare
-                padding="md"
-              />
-            </div>
-            <Button href="/shop" className="lg:hidden">
-              Shop now
-            </Button>
-          </div>
+        <HScroll itemWidth="78vw" desktopClassName="lg:grid lg:grid-cols-3">
+          {steps.map((item) => (
+            <article key={item.step} className="step-card">
+              <span className="type-step">{item.step}</span>
+              <h3 className="step-title">{item.title}</h3>
+              <p className="step-desc">{item.description}</p>
+            </article>
+          ))}
+        </HScroll>
+
+        <div className="mt-8 flex justify-center">
+          <Button href="/shop" className="w-full sm:w-auto">
+            Shop now
+          </Button>
         </div>
       </Container>
     </Section>

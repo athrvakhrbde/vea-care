@@ -15,10 +15,10 @@ const levels: Record<HeadingLevel, string> = {
   display: "type-display",
   h1: cn(serif, "text-[length:var(--text-h1)] font-semibold leading-[1.05] tracking-[-0.02em]"),
   h2: cn(serif, "text-[length:var(--text-h2)] font-semibold leading-[1.1] tracking-[-0.02em]"),
-  h3: cn(serif, "text-[length:var(--text-h3)] font-semibold leading-[1.15]"),
-  h4: cn(serif, "text-[length:var(--text-h4)] font-semibold leading-[1.2]"),
-  h5: cn(serif, "text-[length:var(--text-h5)] font-semibold leading-[1.3]"),
-  h6: cn(serif, "text-[length:var(--text-h6)] font-semibold leading-[1.3]"),
+  h3: cn(serif, "text-[length:var(--text-h3)] font-semibold leading-[1.15] tracking-[0em]"),
+  h4: cn(serif, "text-[length:var(--text-h4)] font-semibold leading-[1.2] tracking-[0em]"),
+  h5: cn(serif, "text-[length:var(--text-h5)] font-semibold leading-[1.3] tracking-[0em]"),
+  h6: cn(serif, "text-[length:var(--text-h6)] font-semibold leading-[1.3] tracking-[0em]"),
   label: "type-label",
 };
 

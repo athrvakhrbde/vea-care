@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "How do I order?",
-    a: "Browse our shop, select your formula, and reach out via contact to complete your order. We ship across India.",
+    a: "Browse our shop, add products to cart, and checkout securely on veacare.com. We ship across India.",
   },
 ];
 
@@ -28,7 +28,7 @@ export function FaqSection() {
           {faqs.map((faq) => (
             <details key={faq.q} className="faq-row group">
               <summary>
-                {faq.q}
+                <span className="min-w-0 flex-1 pr-2">{faq.q}</span>
                 <span className="faq-icon text-xl leading-none">+</span>
               </summary>
               <Text tone="secondary" className="pb-6 pr-8 font-medium">

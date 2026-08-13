@@ -15,11 +15,11 @@ import {
 const faqs = [
   {
     q: "How long does shipping take?",
-    a: "Orders are typically dispatched within 1–2 business days. Delivery across India takes 3–7 business days depending on your location.",
+    a: "Orders ship within 1–3 working days. Metro cities typically arrive in 2–4 working days; Tier 2 & 3 cities in 4–7; remote areas in 5–9.",
   },
   {
-    q: "What is your return policy?",
-    a: "We offer a 7-day return policy on unopened products. If you're not satisfied, contact us and we'll make it right.",
+    q: "What is your return & exchange policy?",
+    a: "Because of hygiene, we don’t accept returns on opened or used items. Replacements are offered for damaged, defective, or incorrect products if requested within 4 days of delivery at help@veacare.com.",
   },
   {
     q: "Are VEA products safe for daily use?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "How do I track my order?",
-    a: "Once your order ships, you'll receive a tracking link via email and SMS. You can also reach out to us directly.",
+    a: "Once your order is dispatched, you’ll receive a tracking link via SMS and/or email. Tracking becomes active within 24 hours. You can also use Track your order in the footer.",
   },
 ];
 
@@ -35,13 +35,15 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <>
-      <Section padding="lg">
+    <div className="main-sections pt-[var(--page-padding-top)] pb-[var(--section-padding-y)]">
+      <Section padding="none">
         <Container>
           <PageHeader
             eyebrow="Contact"
             title="Get in touch"
             description="Questions about our products, your order, or lower-limb care."
+            spacing="none"
+            className="mb-8"
           />
 
           <div className="layout-split">
@@ -79,10 +81,10 @@ export default function ContactPage() {
                   Email
                 </Heading>
                 <a
-                  href="mailto:hello@veacare.com"
+                  href="mailto:help@veacare.com"
                   className="mt-2 block font-medium text-[var(--nue-text)] underline underline-offset-4 hover:no-underline"
                 >
-                  hello@veacare.com
+                  help@veacare.com
                 </a>
               </div>
               <div>
@@ -98,24 +100,22 @@ export default function ContactPage() {
         </Container>
       </Section>
 
-      <Section padding="lg" id="faq">
+      <Section padding="none" id="faq">
         <Container size="narrow">
-          <PageHeader title="Frequently asked questions" spacing="none" />
-          <div className="mt-10">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="faq-row group">
-                <summary>
-                  {faq.q}
-                  <span className="faq-icon text-xl leading-none">+</span>
-                </summary>
-                <Text tone="secondary" className="pb-6 pr-8 font-medium">
-                  {faq.a}
-                </Text>
-              </details>
-            ))}
-          </div>
+          <PageHeader title="Frequently asked questions" spacing="none" className="mb-8" />
+          {faqs.map((faq) => (
+            <details key={faq.q} className="faq-row group">
+              <summary>
+                <span className="min-w-0 flex-1 pr-2">{faq.q}</span>
+                <span className="faq-icon text-xl leading-none">+</span>
+              </summary>
+              <Text tone="secondary" className="pb-6 pr-8 font-medium">
+                {faq.a}
+              </Text>
+            </details>
+          ))}
         </Container>
       </Section>
-    </>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ import { Testimonials } from "@/components/home/testimonials";
 
 export default function HomePage() {
   return (
-    <div className="main-sections pb-[var(--section-gap)]">
+    <div className="main-sections pb-8">
       <Hero />
       <HowItWorks />
       <FeaturedProducts />

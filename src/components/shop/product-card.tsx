@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Badge,
   CardBody,
@@ -11,17 +13,37 @@ import {
   PriceRow,
   VeaImage,
 } from "@/design-system";
+import { trackSelectItem } from "@/lib/analytics/ga4-ecommerce";
 import { type Product } from "@/lib/data/products";
 
 export function ProductCard({
   product,
   priority = false,
+  index,
+  itemListId,
+  itemListName,
 }: {
   product: Product;
   priority?: boolean;
+  index?: number;
+  itemListId?: string;
+  itemListName?: string;
 }) {
   return (
-    <CardLink href={`/shop/${product.slug}`}>
+    <CardLink
+      href={`/shop/${product.slug}`}
+      onClick={
+        itemListId && itemListName
+          ? () =>
+              trackSelectItem({
+                item_list_id: itemListId,
+                item_list_name: itemListName,
+                product,
+                index,
+              })
+          : undefined
+      }
+    >
       <CardMedia
         variant="product"
         badge={

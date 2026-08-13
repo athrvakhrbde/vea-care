@@ -1,0 +1,39 @@
+{
+  "redirects": [
+    {
+      "source": "/cart",
+      "destination": "https://veacare.com/cart",
+      "permanent": false
+    },
+    {
+      "source": "/cart/:path*",
+      "destination": "https://veacare.com/cart/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/checkout",
+      "destination": "https://veacare.com/checkout",
+      "permanent": false
+    },
+    {
+      "source": "/checkout/:path*",
+      "destination": "https://veacare.com/checkout/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/checkouts/:path*",
+      "destination": "https://veacare.com/checkouts/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/account",
+      "destination": "https://veacare.com/account",
+      "permanent": false
+    },
+    {
+      "source": "/account/:path*",
+      "destination": "https://veacare.com/account/:path*",
+      "permanent": false
+    }
+  ]
+}

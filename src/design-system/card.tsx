@@ -31,11 +31,16 @@ type CardLinkProps = {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 };
 
-export function CardLink({ href, children, className }: CardLinkProps) {
+export function CardLink({ href, children, className, onClick }: CardLinkProps) {
   return (
-    <Link href={href} className={cn("group block h-full", className)}>
+    <Link
+      href={href}
+      className={cn("group block h-full", className)}
+      onClick={onClick}
+    >
       <CardShell interactive>{children}</CardShell>
     </Link>
   );

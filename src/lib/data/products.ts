@@ -3,6 +3,8 @@ import { images, type ImageAsset } from "./images";
 export type Product = {
   id: string;
   slug: string;
+  shopifyHandle: string;
+  shopifyVariantId: string;
   name: string;
   shortName: string;
   description: string;
@@ -24,6 +26,8 @@ export const products: Product[] = [
   {
     id: "1",
     slug: "varicose-veins-relief-cream",
+    shopifyHandle: "varicose-veins-relief-cream-50-g",
+    shopifyVariantId: "50530287386907",
     name: "VEA Care Varicose Veins Relief Cream, 50g",
     shortName: "Varicose Veins Relief Cream",
     description:
@@ -56,6 +60,8 @@ export const products: Product[] = [
   {
     id: "2",
     slug: "diabetic-foot-cream",
+    shopifyHandle: "vea-care-diabetic-foot-cream-50-g",
+    shopifyVariantId: "50530341159195",
     name: "VEA Care Diabetic Foot Cream, 50g",
     shortName: "Diabetic Foot Cream",
     description:

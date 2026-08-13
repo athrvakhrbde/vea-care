@@ -1,4 +1,5 @@
 import { Button, Container, MediaCard, Section, SectionHeader } from "@/design-system";
+import { HScroll } from "@/components/shared/h-scroll";
 import { blogPosts, formatDate } from "@/lib/data/blog";
 
 export function BlogPreview() {
@@ -15,7 +16,10 @@ export function BlogPreview() {
             </Button>
           }
         />
-        <div className="grid-uniform md:grid-cols-2 lg:grid-cols-3">
+        <HScroll
+          itemWidth="80vw"
+          desktopClassName="lg:grid lg:grid-cols-3"
+        >
           {blogPosts.map((post) => (
             <MediaCard
               key={post.slug}
@@ -24,10 +28,10 @@ export function BlogPreview() {
               title={post.title}
               description={post.excerpt}
               meta={formatDate(post.date)}
-              sizes="33vw"
+              sizes="(max-width:1023px) 80vw, 33vw"
             />
           ))}
-        </div>
+        </HScroll>
       </Container>
     </Section>
   );
